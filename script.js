@@ -1,4 +1,3 @@
-
 let tasks = [];
 
 function addTask() {
@@ -28,7 +27,11 @@ function displayTasks() {
 
     const taskCount = document.getElementById("taskCount");
 
+    const completedCount = document.getElementById("completedCount");
+
     taskList.innerHTML = "";
+
+    let completedTasks = 0;
 
     tasks.forEach((task, index) => {
 
@@ -40,6 +43,7 @@ function displayTasks() {
 
         if (task.completed) {
             span.classList.add("completed");
+            completedTasks++;
         }
 
         span.onclick = function() {
@@ -65,4 +69,6 @@ function displayTasks() {
     });
 
     taskCount.textContent = "Total Tasks: " + tasks.length;
+
+    completedCount.textContent = "Completed: " + completedTasks;
 }

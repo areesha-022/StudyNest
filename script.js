@@ -72,3 +72,7 @@ function displayTasks() {
 
     completedCount.textContent = "Completed: " + completedTasks;
 }
+function clearCompleted() {
+    tasks = tasks.filter(task => !task.completed);
+    displayTasks();
+}
